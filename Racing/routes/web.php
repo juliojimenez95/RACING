@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CarreraController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/admin/crearcarrera', [CarreraController::class, 'crearcarrera'])->name('admin.crearcarrera');
+Route::get('/admin/crearpista', [CarreraController::class, 'crearpista'])->name('admin.crearpista');
+
 
 Auth::routes();
 
