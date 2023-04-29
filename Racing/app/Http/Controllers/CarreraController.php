@@ -29,7 +29,12 @@ class CarreraController extends Controller
         $carreras = CarreraModel::all();
         return view('admin.index_carrera',["carreras"=>$carreras]);
     }
-
+    public function editcarrera($id)
+    {
+        $carrera = CarreraModel::where('id',$id)->first();
+        $pistas = PistaModel::all();
+        return view('admin.edit_carrera',["carrera"=>$carrera,"pistas"=>$pistas]);
+    }
 
     public function crearpista()
     {
@@ -43,6 +48,13 @@ class CarreraController extends Controller
         return view('admin.index_pista',["pistas"=>$pistas]);
     }
 
+    public function editpista($id)
+    {
+        $pista = PistaModel::where('id',$id)->first();
+        return view('admin.edit_pista',["pista"=>$pista]);
+    }
+
+
     public function storepista(Request $request)
     {
         $Pista = new PistaModel();
@@ -50,7 +62,20 @@ class CarreraController extends Controller
         $Pista->ruta = $request->ruta;
         $Pista->save();
 
-        return $Pista;
+        return back()->with('message','La pista se creo exitosamente');
+
+
+    }
+
+    public function updatepista(Request $request,$id)
+    {
+        $Pista = PistaModel::where('id',$id)->first();
+        $Pista->lugar = $request->lugar;
+        $Pista->ruta = $request->ruta;
+        $Pista->save();
+
+        return back()->with('message','La pista se edito exitosamente');
+
 
     }
 
@@ -61,11 +86,35 @@ class CarreraController extends Controller
         $carrera->fecha = $request->fecha;
         $carrera->save();
 
-        return $carrera;
+        return back()->with('message','La carrera se creo exitosamente');
+
 
     }
 
+    public function updatecarrera(Request $request,$id)
+    {
+        $carrera =  CarreraModel::where('id',$id)->first();
+        $carrera->pista = $request->pista;
+        $carrera->fecha = $request->fecha;
+        $carrera->save();
 
+        return back()->with('message','La carrera se creo exitosamente');
+
+
+    }
+
+    public function deletecarrera($id){
+
+        CarreraModel::where('id',$id)->delete();
+
+        return back();
+    }
+    public function deletepista($id){
+
+        PistaModel::where('id',$id)->delete();
+
+        return back();
+    }
     /**
      * Show the form for creating a new resource.
      */

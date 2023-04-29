@@ -9,6 +9,12 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <!-- date table -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.3/css/dataTables.bootstrap5.min.css"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.5/css/buttons.bootstrap5.min.css"/>
+
+
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
@@ -23,13 +29,13 @@
 
             @guest
                 <a class="navbar-brand" href="{{ url('/') }}">
-
-            @else
-                <a class="navbar-brand" href="{{ url('/home') }}">
-            @endguest
                     {{ config('app.name', 'Laravel') }}
                 </a>
 
+            @else
+                <a class="navbar-brand" href="{{ url('/home') }}">
+                    {{ config('app.name', 'Laravel') }}
+                </a>
                 <a class="navbar-brand" href="{{ route('admin.indexcarrera') }}">
                     {{ __( 'Eventos') }}
                 </a>
@@ -37,6 +43,9 @@
                 <a class="navbar-brand" href="{{ route('admin.indexpista') }}">
                     {{ __( 'Pistas') }}
                 </a>
+            @endguest
+
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -44,15 +53,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('janasd') }}</a>
-                                </li>
-                            @endif
-                        @else
-
-                        @endguest
+                        
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -97,6 +98,13 @@
         <main class="py-4">
             @yield('content')
         </main>
+        <!-- date table -->
+        <!-- JS de jQuery y DataTables -->
+        <script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="//cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+
+        <!-- Inicializar DataTables -->
+        @yield('script')
     </div>
 </body>
 </html>
