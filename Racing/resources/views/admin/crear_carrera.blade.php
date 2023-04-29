@@ -2,37 +2,62 @@
 
 @section('content')
 <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <a href="#" class="btn btn-primary float-right mb-3">Crear</a>
-      <div class="table-responsive">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Register') }}</div>
 
-        <table class="table">
-            <h1>Carreras</h1>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Pista</th>
-              <th>Fecha</th>
-              <th>Acción</th>
+                <div class="card-body">
+                    <form method="POST" action="{{ route('admin.storecarrera') }}">
+                        @csrf
 
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Producto 1</td>
-              <td>Descripción del producto 1</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Producto 2</td>
-              <td>Descripción del producto 2</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+                        <div class="row mb-3">
+                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Pista') }}</label>
+
+                            <div class="col-md-6">
+                                <select class="form-select" aria-label="Default select example" name="pista">
+                                    <option value="">Porfavor seleccione una pista...</option>
+                                    @foreach ($pistas as $pista)
+                                        <option value="{{ $pista->id }}">{{ $pista->lugar }}</option>
+                                    @endforeach
+
+                                </select>
+
+
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="fecha" class="col-md-4 col-form-label text-md-end">{{ __('Fecha') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="fecha" type="date" class="form-control @error('fecha') is-invalid @enderror" name="fecha" value="{{ old('fecha') }}" required autocomplete="fecha">
+
+                                @error('ruta')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+
+                        <div class="row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Registar') }}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 @endsection

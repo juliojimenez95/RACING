@@ -30,11 +30,11 @@
                     {{ config('app.name', 'Laravel') }}
                 </a>
 
-                <a class="navbar-brand" href="{{ route('admin.crearcarrera') }}">
+                <a class="navbar-brand" href="{{ route('admin.indexcarrera') }}">
                     {{ __( 'Eventos') }}
                 </a>
 
-                <a class="navbar-brand" href="{{ route('admin.crearpista') }}">
+                <a class="navbar-brand" href="{{ route('admin.indexpista') }}">
                     {{ __( 'Pistas') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

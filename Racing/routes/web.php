@@ -20,6 +20,13 @@ Route::get('/', function () {
 
 Route::get('/admin/crearcarrera', [CarreraController::class, 'crearcarrera'])->name('admin.crearcarrera');
 Route::get('/admin/crearpista', [CarreraController::class, 'crearpista'])->name('admin.crearpista');
+Route::get('/admin/indexpista', [CarreraController::class, 'indexpista'])->name('admin.indexpista');
+Route::get('/admin/indexcarrera', [CarreraController::class, 'indexcarrera'])->name('admin.indexcarrera');
+Route::post('/admin/storepista', [CarreraController::class, 'storepista'])->name('admin.storepista');
+Route::post('/admin/storecarrera', [CarreraController::class, 'storecarrera'])->name('admin.storecarrera');
+
+
+
 
 
 Auth::routes();
