@@ -38,12 +38,6 @@ Route::get('/admin/editmoto/{id}', [MotoController::class, 'editmoto'])->name('a
 Route::post('/admin/storemoto', [MotoController::class, 'storemoto'])->name('admin.storemoto');
 Route::put('/admin/updatemoto/{id}', [MotoController::class, 'updatemoto'])->name('admin.updatemoto');
 Route::delete('/admin/deletemoto/{id}', [MotoController::class, 'deletemoto'])->name('admin.deletemoto');
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> 71c8f859d9f7c5d81de260ed027ff549ca7a85ae
 
 Auth::routes();
 
