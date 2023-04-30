@@ -30,7 +30,13 @@ Route::put('/admin/updatecarrera/{id}', [CarreraController::class, 'updatecarrer
 Route::post('/admin/storecarrera', [CarreraController::class, 'storecarrera'])->name('admin.storecarrera');
 Route::delete('/admin/deletepista/{id}', [CarreraController::class, 'deletepista'])->name('admin.deletepista');
 Route::delete('/admin/deletecarrera/{id}', [CarreraController::class, 'deletecarrera'])->name('admin.deletecarrera');
-
+Route::get('/admin/indexEvento', [EventoController::class, 'indexEvento'])->name('admin.indexEvento');
+Route::get('/admin/indexMoto', [MotoController::class, 'indexMoto'])->name('admin.indexMoto');
+Route::get('/admin/crearmoto', [MotoController::class, 'crearmoto'])->name('admin.crearmoto');
+Route::get('/admin/editmoto/{id}', [MotoController::class, 'editmoto'])->name('admin.editmoto');
+Route::post('/admin/storemoto', [MotoController::class, 'storemoto'])->name('admin.storemoto');
+Route::put('/admin/updatemoto/{id}', [MotoController::class, 'updatemoto'])->name('admin.updatemoto');
+Route::delete('/admin/deletemoto/{id}', [MotoController::class, 'deletemoto'])->name('admin.deletemoto');
 
 
 Auth::routes();
