@@ -43,6 +43,12 @@
                 <a class="navbar-brand" href="{{ route('admin.indexpista') }}">
                     {{ __( 'Pistas') }}
                 </a>
+                <a class="navbar-brand" href="{{ route('admin.indexEvento') }}">
+                    {{ __( 'Evento2') }}
+                </a>
+                <a class="navbar-brand" href="{{ route('admin.indexMoto') }}">
+                    {{ __( 'Moto') }}
+                </a>
             @endguest
 
 
