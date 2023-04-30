@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarreraController;
-
+use App\Http\Controllers\EventoController;
+use App\Http\Controllers\MotoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,7 +38,6 @@ Route::get('/admin/editmoto/{id}', [MotoController::class, 'editmoto'])->name('a
 Route::post('/admin/storemoto', [MotoController::class, 'storemoto'])->name('admin.storemoto');
 Route::put('/admin/updatemoto/{id}', [MotoController::class, 'updatemoto'])->name('admin.updatemoto');
 Route::delete('/admin/deletemoto/{id}', [MotoController::class, 'deletemoto'])->name('admin.deletemoto');
-
 
 Auth::routes();
 
