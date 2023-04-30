@@ -33,9 +33,6 @@ Route::delete('/admin/deletecarrera/{id}', [CarreraController::class, 'deletecar
 
 
 
-
-
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
