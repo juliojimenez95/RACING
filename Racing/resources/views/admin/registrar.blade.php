@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('Registro.store') }}">
                         @csrf
 
                         <div class="row mb-3">
@@ -43,8 +43,13 @@
                             <label for="role" class="col-md-4 col-form-label text-md-end">{{ __('role') }}</label>
 
                             <div class="col-md-6">
-                                <input id="role" class="form-control @error('role') is-invalid @enderror" name="role" value="{{ old('role') }}" required autocomplete="role">
+                                <select class="form-select" aria-label="Default select example" name="role">
+                                    <option value="">Porfavor seleccione una rol...</option>
+                                    @foreach ($roles as $role)
+                                        <option value="{{ $role->id }}">{{ $role->nombre }}</option>
+                                    @endforeach
 
+                                </select>
                                 @error('role')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

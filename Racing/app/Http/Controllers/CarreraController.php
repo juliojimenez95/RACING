@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\PistaModel;
 use App\Models\CarreraModel;
+use App\Models\MotoModel;
+use App\Models\PilotoCarreraModel;
 
 
 
@@ -22,6 +24,27 @@ class CarreraController extends Controller
     {
         $pistas = PistaModel::all();
         return view('admin.crear_carrera',["pistas"=>$pistas]);
+    }
+
+    public function inscripcion()
+    {
+        $carreras = CarreraModel::all();
+        $motos = MotoModel::all();
+        return view('admin.inscripcion_piloto_carrera',["carreras"=>$carreras,"motos"=>$motos]);
+    }
+
+    public function incribirse(Request $request)
+    {
+        $piloto_c = new PilotoCarreraModel();
+        $piloto_c->piloto = $request->piloto;
+        $piloto_c->carerra = $request->carrera;
+        $piloto_c->moto = $request->moto;
+        $piloto_c->posicion = 0;
+        $piloto_c->save();
+
+        return back()->with('message','La incripcion se realizo exitosamente');
+
+
     }
 
     public function indexcarrera()

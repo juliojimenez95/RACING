@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarreraController;
 use App\Http\Controllers\EventoController;
 use App\Http\Controllers\MotoController;
+use App\Http\Controllers\RegisterController;
+
+use Illuminate\Support\Facades\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,6 +42,10 @@ Route::get('/admin/editmoto/{id}', [MotoController::class, 'editmoto'])->name('a
 Route::post('/admin/storemoto', [MotoController::class, 'storemoto'])->name('admin.storemoto');
 Route::put('/admin/updatemoto/{id}', [MotoController::class, 'updatemoto'])->name('admin.updatemoto');
 Route::delete('/admin/deletemoto/{id}', [MotoController::class, 'deletemoto'])->name('admin.deletemoto');
+Route::get('/Registro/index', [RegisterController::class, 'index'])->name('Registro.index');
+Route::post('/Registro/store', [RegisterController::class, 'store'])->name('Registro.store');
+Route::get('/piloto/inscripcion', [CarreraController::class, 'inscripcion'])->name('piloto.inscripcion');
+Route::post('/piloto/incribirse', [CarreraController::class, 'incribirse'])->name('piloto.incribirse');
 
 Auth::routes();
 
