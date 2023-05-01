@@ -5,6 +5,7 @@ use App\Http\Controllers\CarreraController;
 use App\Http\Controllers\EventoController;
 use App\Http\Controllers\MotoController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ApuestasController;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -46,6 +47,12 @@ Route::get('/Registro/index', [RegisterController::class, 'index'])->name('Regis
 Route::post('/Registro/store', [RegisterController::class, 'store'])->name('Registro.store');
 Route::get('/piloto/inscripcion', [CarreraController::class, 'inscripcion'])->name('piloto.inscripcion');
 Route::post('/piloto/incribirse', [CarreraController::class, 'incribirse'])->name('piloto.incribirse');
+Route::get('/admin/indexapuesta', [ApuestasController::class, 'indexapuesta'])->name('admin.indexapuesta');
+Route::get('/admin/crearapuesta', [ApuestasController::class, 'crearapuesta'])->name('admin.crearapuesta');
+Route::get('/admin/editapuesta/{id}', [ApuestasController::class, 'editapuesta'])->name('admin.editapuesta');
+Route::post('/admin/storeapuesta', [ApuestasController::class, 'storeapuesta'])->name('admin.storeapuesta');
+Route::put('/admin/updateapuesta/{id}', [ApuestasController::class, 'updateapuesta'])->name('admin.updateapuesta');
+Route::delete('/admin/deleteapuesta/{id}', [ApuestasController::class, 'deleteapuesta'])->name('admin.deleteapuesta');
 
 Auth::routes();
 
