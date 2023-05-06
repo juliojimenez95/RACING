@@ -6,6 +6,8 @@ use App\Http\Controllers\EventoController;
 use App\Http\Controllers\MotoController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ApuestasController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -50,10 +52,26 @@ Route::post('/piloto/incribirse', [CarreraController::class, 'incribirse'])->nam
 Route::get('/admin/indexapuesta', [ApuestasController::class, 'indexapuesta'])->name('admin.indexapuesta');
 Route::get('/admin/crearapuesta', [ApuestasController::class, 'crearapuesta'])->name('admin.crearapuesta');
 Route::get('/admin/editapuesta/{id}', [ApuestasController::class, 'editapuesta'])->name('admin.editapuesta');
-Route::post('/admin/storeapuesta', [ApuestasController::class, 'storeapuesta'])->name('admin.storeapuesta');
+Route::post('/admin/storeapuesta/{id}', [ApuestasController::class, 'storeapuesta'])->name('admin.storeapuesta');
 Route::put('/admin/updateapuesta/{id}', [ApuestasController::class, 'updateapuesta'])->name('admin.updateapuesta');
 Route::delete('/admin/deleteapuesta/{id}', [ApuestasController::class, 'deleteapuesta'])->name('admin.deleteapuesta');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/email/verify', function () {
+    return view('auth.verify-email');
+})->middleware('auth')->name('verification.notice');
+
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+
+    return redirect('/home');
+})->middleware(['auth', 'signed'])->name('verification.verify');
+
+
+Route::post('/email/verification-notification', function (Request $request) {
+    $request->user()->sendEmailVerificationNotification();
+
+    return back()->with('message', 'Verification link sent!');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.send');

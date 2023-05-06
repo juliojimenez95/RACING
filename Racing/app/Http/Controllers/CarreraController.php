@@ -37,7 +37,7 @@ class CarreraController extends Controller
     {
         $piloto_c = new PilotoCarreraModel();
         $piloto_c->piloto = $request->piloto;
-        $piloto_c->carerra = $request->carrera;
+        $piloto_c->carrera = $request->carrera;
         $piloto_c->moto = $request->moto;
         $piloto_c->posicion = 0;
         $piloto_c->save();

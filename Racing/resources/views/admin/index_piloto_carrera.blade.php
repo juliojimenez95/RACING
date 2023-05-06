@@ -4,14 +4,14 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <a href="" class="btn btn-primary float-right mb-3">Crear</a>
+      <a href="{{ route('piloto.inscripcion') }}" class="btn btn-primary float-right mb-3">Crear</a>
       <div class="table-responsive">
 
         <table id="miTabla" class="table">
             <h1>Pilotos de la carrera</h1>
           <thead>
             <tr>
-                
+
                 <th>Piloto</th>
                 <th>ID de carrera</th>
                 <th>ID de moto</th>

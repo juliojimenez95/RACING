@@ -15,7 +15,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('piloto') }}</label>
 
                             <div class="col-md-6">
-                                <input id="piloto" type="text" class="form-control @error('piloto') is-invalid @enderror" name="piloto" value="{{ Auth::user()->id }}" required autocomplete="lugar" autofocus>
+                                <input id="piloto" type="number" class="form-control @error('piloto') is-invalid @enderror" name="piloto" value="{{ Auth::user()->id }}" required autocomplete="piloto" autofocus>
 
                                 @error('piloto')
                                     <span class="invalid-feedback" role="alert">
@@ -50,7 +50,7 @@
                                 <select class="form-select" aria-label="Default select example" name="moto">
                                     <option value="">Porfavor seleccione una moto...</option>
                                     @foreach ($motos as $moto)
-                                        <option value="{{ $moto->id }}">{{ $moto->nombre }}</option>
+                                        <option value="{{ $moto->id }}">{{ $moto->marca }}</option>
                                     @endforeach
 
                                 </select>

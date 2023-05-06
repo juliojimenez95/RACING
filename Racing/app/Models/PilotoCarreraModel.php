@@ -10,11 +10,11 @@ class PilotoCarreraModel extends Model
     protected $table = 'pilotos_carrera';
     public $timestamps = false;
     protected $primaryKey = "id";
-    
+
     protected $fillable = [
         'id',
         'piloto',
-        'carerra',
+        'carrera',
         'moto',
         'posicion'
     ];

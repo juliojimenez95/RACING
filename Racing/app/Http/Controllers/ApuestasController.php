@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ApuestaModel;
+use App\Models\PistaModel;
+use App\Models\user;
+use Illuminate\Support\Facades\DB;
+
 
 class ApuestasController extends Controller
 {
@@ -17,8 +21,9 @@ class ApuestasController extends Controller
 
     public function crearapuesta()
     {
+        $pilotos = DB::select("SELECT * FROM pilotos_carrera");
 
-        return view('admin.crear_apuesta');
+        return view('admin.crear_apuesta',['pilotos'=>$pilotos]);
     }
 
     public function indexapuesta()
@@ -34,13 +39,13 @@ class ApuestasController extends Controller
     }
 
 
-    public function storeapuesta(Request $request)
+    public function storeapuesta(Request $request,$id)
     {
         $apuesta = new ApuestaModel();
-        $apuesta->valor_apuesta = $request->valor_apuesta;
-        $apuesta->valor_ganacia = $request->valor_ganacia;
-        $apuesta->users = $request->users;
-        $apuesta->piloto_carrera = $request->piloto_carrera;
+        $apuesta->valor_apuesta = $request->Valor_apuesta;
+        $apuesta->valor_ganacia = 0;
+        $apuesta->users = $id;
+        $apuesta->piloto_carrera = $request->piloto;
         $apuesta->save();
 
         return back()->with('message','La pista se creo exitosamente');

@@ -12,7 +12,6 @@
           <thead>
             <tr>
               <th>Id</th>
-              <th>Usuario</th>
               <th>Valor de la apuesta</th>
               <th>Valor de ganancia</th>
               <th>Piloto</th>
@@ -24,8 +23,7 @@
                     <tr>
                         <td>{{ $apuesta->id }}</td>
                         <td>{{ $apuesta->valor_apuesta }}</td>
-                        <td>{{ valor_ganacia }}</td>
-                        <td>{{ $apuesta->users }}</td>
+                        <td>{{  $apuesta->valor_ganacia }}</td>
                         <td>{{ $apuesta->piloto_carrera }}</td>
                         <td>
                             <a href="{{  route('admin.editapuesta', $apuesta->id)  }}" class="btn btn-warning">EDITAR</a>
