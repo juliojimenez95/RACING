@@ -52,6 +52,10 @@
                 <a class="navbar-brand" href="{{ route('admin.indexapuesta') }}">
                     {{ __( 'Apuesta') }}
                 </a>
+
+                <a class="navbar-brand" href="{{ route('admin.indexUser') }}">
+                    {{ __( 'Usuarios') }}
+                </a>
             @endguest
 
 

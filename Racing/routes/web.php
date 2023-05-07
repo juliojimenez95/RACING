@@ -6,6 +6,7 @@ use App\Http\Controllers\EventoController;
 use App\Http\Controllers\MotoController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ApuestasController;
+use App\Http\Controllers\userController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 
@@ -55,6 +56,7 @@ Route::get('/admin/editapuesta/{id}', [ApuestasController::class, 'editapuesta']
 Route::post('/admin/storeapuesta/{id}', [ApuestasController::class, 'storeapuesta'])->name('admin.storeapuesta');
 Route::put('/admin/updateapuesta/{id}', [ApuestasController::class, 'updateapuesta'])->name('admin.updateapuesta');
 Route::delete('/admin/deleteapuesta/{id}', [ApuestasController::class, 'deleteapuesta'])->name('admin.deleteapuesta');
+Route::get('/admin/indexUser', [userController::class, 'indexUser'])->name('admin.indexUser');
 
 Auth::routes();
 
