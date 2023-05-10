@@ -59,6 +59,10 @@
 
                 <a class="navbar-brand" href="{{ route('admin.index') }}">
                     {{ __( 'Recargas') }}
+
+                <a class="navbar-brand" href="{{ route('Registro.recargar') }}">
+                    {{ __( 'Recargar2') }}
+
                 </a>
             @endguest
 

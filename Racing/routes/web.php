@@ -60,10 +60,15 @@ Route::put('/admin/updateapuesta/{id}', [ApuestasController::class, 'updateapues
 Route::delete('/admin/deleteapuesta/{id}', [ApuestasController::class, 'deleteapuesta'])->name('admin.deleteapuesta');
 Route::get('/admin/indexUser', [userController::class, 'indexUser'])->name('admin.indexUser');
 
+
 // recarga
 Route::get('/admin/create/{id}', [RecargaController::class, 'create'])->name('admin.create');
 Route::post('/admin/store/{id}', [RecargaController::class, 'store'])->name('admin.store');
 Route::get('/admin/index', [RecargaController::class, 'index'])->name('admin.index');
+
+
+Route::get('/Registro/recargar', [RegisterController::class, 'recargar'])->name('Registro.recargar');
+Route::post('/Registro/updaterecarga/{id}', [RegisterController::class, 'updaterecarga'])->name('Registro.updaterecarga');
 
 Auth::routes();
 
