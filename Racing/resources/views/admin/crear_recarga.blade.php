@@ -15,16 +15,16 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('admin.create',$id) }}">
+                    <form method="POST" action="{{ route('admin.store',$id) }}">
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="Valor_recarga" class="col-md-4 col-form-label text-md-end">{{ __('Cantidad de recarga') }}</label>
+                            <label for="valor" class="col-md-4 col-form-label text-md-end">{{ __('Valor de la recarga') }}</label>
 
                             <div class="col-md-6">
-                                <input id="Valor_recarga" type="number" class="form-control @error('Valor_recarga') is-invalid @enderror" name="Valor_recarga" value="{{ old('Valor_recarga') }}" required autocomplete="Valor_recarga">
+                                <input id="saldo" type="number" class="form-control @error('saldo') is-invalid @enderror" name="saldo" value="{{ old('saldo') }}" required autocomplete="saldo">
 
-                                @error('Cantidad de recarga')
+                                @error('valor de la recarga')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

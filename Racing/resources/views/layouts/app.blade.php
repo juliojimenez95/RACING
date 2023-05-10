@@ -56,6 +56,10 @@
                 <a class="navbar-brand" href="{{ route('admin.indexUser') }}">
                     {{ __( 'Usuarios') }}
                 </a>
+
+                <a class="navbar-brand" href="{{ route('admin.index') }}">
+                    {{ __( 'Recargas') }}
+                </a>
             @endguest
 
 

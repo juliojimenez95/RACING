@@ -71,7 +71,7 @@ class RegisterController extends Controller
     }
 
     public function recargar($id)
-    {   
+    {
         $User = User::find($id);
         return view('usuarios.recargar', compact('usuario'));
     }

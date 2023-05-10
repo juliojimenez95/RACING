@@ -13,20 +13,19 @@
             <tr>
               <th>ID</th>
               <th>nombre</th>
-             <th>saldo</th>
+              <th>saldo</th>
               <th>Acción</th>
 
             </tr>
           </thead>
           <tbody>
-                    @foreach ($users as $user)
+                    @foreach ($recargas as $recarga)
                     <tr>
-                        <td>{{ $user->id }}</td>
-                        <td>{{ $user->name }}</td>
-                        <td>{{ $user->saldo }}</td>
+                        <td>{{ $recarga->id }}</td>
+                        <td>{{ $recarga->saldo }}</td>
+                        <td>{{ $recarga->estado }}</td>
                         <td>
-                            <a href="" class="btn btn-warning">EDITAR</a>
-                            <a href="{{ route('admin.create',$user->id) }}" class="btn btn-warning">Recargar</a>
+                            <a href="" class="btn btn-warning">Aprobar</a>
                             <form action="" method="POST">
                                 @csrf
                                 @method('put')
