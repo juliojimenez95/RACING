@@ -72,7 +72,7 @@ class RegisterController extends Controller
 
     public function recargar()
     {   
-        return view('recargar_saldo');
+        return view('admin.recargar_saldo');
     }
 
     public function updaterecarga($id)
