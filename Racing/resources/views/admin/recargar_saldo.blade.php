@@ -15,7 +15,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('Registro.updaterecarga') }}">
+                    <form method="POST" action="{{ route('Registro.updaterecarga',Auth::user()->id) ) }}">
                         @csrf
 
                         <div class="row mb-3">

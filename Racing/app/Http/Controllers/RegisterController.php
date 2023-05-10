@@ -70,10 +70,9 @@ class RegisterController extends Controller
         return Redirect('/login');
     }
 
-    public function recargar($id)
+    public function recargar()
     {   
-        $User = User::find($id);
-        return view('Registro.recargar', compact('User'));
+        return view('Registro.recargar');
     }
 
     public function updaterecarga($id)
