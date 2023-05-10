@@ -57,7 +57,8 @@ Route::post('/admin/storeapuesta/{id}', [ApuestasController::class, 'storeapuest
 Route::put('/admin/updateapuesta/{id}', [ApuestasController::class, 'updateapuesta'])->name('admin.updateapuesta');
 Route::delete('/admin/deleteapuesta/{id}', [ApuestasController::class, 'deleteapuesta'])->name('admin.deleteapuesta');
 Route::get('/admin/indexUser', [userController::class, 'indexUser'])->name('admin.indexUser');
-
+Route::get('/Registro/recargar', [RegisterController::class, 'recargar'])->name('Registro.recargar');
+Route::post('/Registro/updaterecarga/{id}', [RegisterController::class, 'updaterecarga'])->name('Registro.updaterecarga');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

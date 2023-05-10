@@ -73,7 +73,7 @@ class RegisterController extends Controller
     public function recargar($id)
     {   
         $User = User::find($id);
-        return view('usuarios.recargar', compact('usuario'));
+        return view('Registro.recargar', compact('User'));
     }
 
     public function updaterecarga($id)
@@ -83,7 +83,7 @@ class RegisterController extends Controller
     $User->saldo += $recarga;
     $User->save();
 
-    return redirect()->route('', $usuario->id);
+    return redirect()->route('Registro.recargar', $User->id);
 }
 
     /**
