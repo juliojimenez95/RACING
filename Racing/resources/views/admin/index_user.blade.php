@@ -25,14 +25,14 @@
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->saldo }}</td>
                         <td>
-                            <a href="" class="btn btn-warning">EDITAR</a>
-                            <a href="{{ route('admin.create',$user->id) }}" class="btn btn-warning">Recargar</a>
+                            <a href="" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <a href="{{ route('admin.create',$user->id) }}" class="btn btn-success"><i class="fa-solid fa-dollar-sign"></i></a>
                             <form action="" method="POST">
                                 @csrf
                                 @method('put')
 
                                 @method('delete')
-                                <button type="submit" class="btn btn-danger">ELIMINAR</button>
+                                <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
                             </form>
                         </td>
                     </tr>
