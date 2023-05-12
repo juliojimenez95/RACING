@@ -12,8 +12,8 @@
           <thead>
             <tr>
               <th>ID</th>
-              <th>nombre</th>
               <th>saldo</th>
+              <th>estado</th>
               <th>Acción</th>
 
             </tr>
@@ -25,13 +25,13 @@
                         <td>{{ $recarga->saldo }}</td>
                         <td>{{ $recarga->estado }}</td>
                         <td>
-                            <a href="" class="btn btn-warning">Aprobar</a>
+                            <a href="" class="btn btn-block"><i class="fa-solid fa-check"></i></a>
                             <form action="" method="POST">
                                 @csrf
                                 @method('put')
 
                                 @method('delete')
-                                <button type="submit" class="btn btn-danger">ELIMINAR</button>
+                                <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
                             </form>
                         </td>
                     </tr>
