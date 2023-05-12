@@ -72,16 +72,6 @@ class RegisterController extends Controller
 
 
 
-    public function updaterecarga($id)
-{
-    $User= User::find($id);
-    $recarga = request('Valor_recarga');
-    $User->saldo += $recarga;
-    $User->save();
-
-    return redirect()->route('Registro.recargar', $User->id);
-}
-
     /**
      * Display the specified resource.
      */

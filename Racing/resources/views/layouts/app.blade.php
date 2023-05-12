@@ -19,6 +19,11 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script  src="https://code.jquery.com/jquery-3.6.3.js"
+            integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+            crossorigin="anonymous"></script>
+
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
@@ -59,9 +64,6 @@
 
                 <a class="navbar-brand" href="{{ route('admin.index') }}">
                     {{ __( 'Recargas') }}
-
-                <a class="navbar-brand" href="{{ route('Registro.recargar') }}">
-                    {{ __( 'Recargar2') }}
 
                 </a>
             @endguest

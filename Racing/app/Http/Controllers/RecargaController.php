@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\RecargaModel;
+use App\Models\User;
+
 
 
 class RecargaController extends Controller
@@ -38,6 +40,25 @@ class RecargaController extends Controller
 
         $recarga->save();
         return back()->with('message','La recarga se creo exitosamente');
+
+    }
+
+    public function verificarR($id)
+    {
+        $recarga =  RecargaModel::where('id',$id)->first();
+        $user =  User::where('id',$recarga->user_id)->first();
+
+        if ($recarga->estado == "sin verificar") {
+            $recarga->estado = "verificado";
+            $user->saldo = $user->saldo+$recarga->saldo;
+            $user->save();
+        }elseif ($recarga->estado =="verificado") {
+            $recarga->estado = "verificar";
+        }
+
+        $recarga->save();
+
+        return back()->with('message','Se aprobo  exitosamente');
 
     }
 

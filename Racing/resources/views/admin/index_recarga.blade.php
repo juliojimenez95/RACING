@@ -25,14 +25,19 @@
                         <td>{{ $recarga->saldo }}</td>
                         <td>{{ $recarga->estado }}</td>
                         <td>
-                            <a href="" class="btn btn-block"><i class="fa-solid fa-check"></i></a>
-                            <form action="" method="POST">
-                                @csrf
-                                @method('put')
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                                Abrir modal
+                            </button>
+{{--
+                            <form action="{{ route('admin.verificarR',$recarga->id) }}" method="POST">
+                             @csrf
+                             @method('put')
+                            @if ($recarga->estado == "sin verificar")
+                            <button type="submit" class="btn btn-block"><i class="fa-solid fa-check"></i></button>
 
-                                @method('delete')
-                                <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
-                            </form>
+                            @else
+                            <button type="submit" class="btn btn-success"><i class="fa-solid fa-check"></i></button>
+                            @endif  --}}
                         </td>
                     </tr>
                 @endforeach
@@ -42,6 +47,26 @@
       </div>
     </div>
   </div>
+</div>
+{{-- vista modal factura --}}
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Título del modal</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Contenido del modal...</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">Guardar cambios</button>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection
 @section('script')

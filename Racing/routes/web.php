@@ -65,10 +65,8 @@ Route::get('/admin/indexUser', [userController::class, 'indexUser'])->name('admi
 Route::get('/admin/create/{id}', [RecargaController::class, 'create'])->name('admin.create');
 Route::post('/admin/store/{id}', [RecargaController::class, 'store'])->name('admin.store');
 Route::get('/admin/index', [RecargaController::class, 'index'])->name('admin.index');
+Route::put('/admin/verificarR/{id}', [RecargaController::class, 'verificarR'])->name('admin.verificarR');
 
-
-Route::get('/Registro/recargar', [RegisterController::class, 'recargar'])->name('Registro.recargar');
-Route::post('/Registro/updaterecarga/{id}', [RegisterController::class, 'updaterecarga'])->name('Registro.updaterecarga');
 
 Auth::routes();
 
