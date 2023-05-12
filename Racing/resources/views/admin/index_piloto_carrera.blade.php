@@ -28,11 +28,11 @@
                         <td>{{ $pilotos_carrera->moto }}</td>
                         <td>{{ $pilotos_carrera->posicion }}</td>
                         <td>
-                            <a href="" class="btn btn-warning">EDITAR</a>
+                            <a href="" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
                             <form action="" method="POST">
                                 @csrf
                                 @method('delete')
-                                <button type="submit" class="btn btn-danger">ELIMINAR</button>
+                                <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
                             </form>
                         </td>
                     </tr>

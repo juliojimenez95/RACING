@@ -24,11 +24,11 @@
                         <td>{{ $moto->marca }}</td>
 
                         <td>
-                            <a href="{{  route('admin.editmoto', $moto->id)  }}" class="btn btn-warning">EDITAR</a>
+                            <a href="{{  route('admin.editmoto', $moto->id)  }}" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
                             <form action="{{  route('admin.deletemoto', $moto->id)  }}" method="POST">
                                 @csrf
                                 @method('delete')
-                                <button type="submit" class="btn btn-danger">ELIMINAR</button>
+                                <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
                             </form>
                         </td>
                     </tr>
