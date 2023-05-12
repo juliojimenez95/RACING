@@ -39,6 +39,7 @@ class RegisterController extends Controller
             [
                 'name' => 'required|string|max:255',
                 'email' => 'required|string|email|max:255|unique:users',
+                'role' => 'required',
                 'password' => 'required|string|min:8|confirmed',
 
             ]
@@ -48,6 +49,7 @@ class RegisterController extends Controller
                 'email.required' => 'El email es requerido',
                 'email.email' => 'El email deber ser real ejemplo@gmail.com',
                 'email.unique' => 'El email ya se encuentra registrado',
+                'role.required' => 'Elige un rol',
                 'password.required' => 'La contraseña es requerida',
                 'password.min' => 'La contraseña debe tener minimo 8 caracteres',
                 'password.confirmed' => 'La contraseña debe ser confirmada',
@@ -58,6 +60,7 @@ class RegisterController extends Controller
        $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'role' => $request->role,
             'password' => Hash::make($request->password),
         ]);
 

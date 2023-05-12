@@ -43,7 +43,7 @@
                             <label for="role" class="col-md-4 col-form-label text-md-end">{{ __('role') }}</label>
 
                             <div class="col-md-6">
-                                <select class="form-select" aria-label="Default select example" name="role">
+                                <select class="form-select @error('role') is-invalid @enderror" aria-label="Default select example" name="role">
                                     <option value="">Porfavor seleccione una rol...</option>
                                     @foreach ($roles as $role)
                                         <option value="{{ $role->id }}">{{ $role->nombre }}</option>
