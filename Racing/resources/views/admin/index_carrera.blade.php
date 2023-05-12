@@ -25,11 +25,11 @@
                         <td>{{ $carrera->pista }}</td>
                         <td>{{ $carrera->fecha }}</td>
                         <td>
-                            <a href="{{  route('admin.editcarrera', $carrera->id)  }}" class="btn btn-warning">EDITAR</a>
+                            <a href="{{  route('admin.editcarrera', $carrera->id)  }}" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
                             <form action="{{  route('admin.deletecarrera', $carrera->id)  }}" method="POST">
                                 @csrf
                                 @method('delete')
-                                <button type="submit" class="btn btn-danger">ELIMINAR</button>
+                                <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
                             </form>
                         </td>
                     </tr>

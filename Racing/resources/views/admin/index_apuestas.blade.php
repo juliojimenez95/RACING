@@ -26,13 +26,13 @@
                         <td>{{  $apuesta->valor_ganacia }}</td>
                         <td>{{ $apuesta->piloto_carrera }}</td>
                         <td>
-                            <a href="{{  route('admin.editapuesta', $apuesta->id)  }}" class="btn btn-warning">EDITAR</a>
+                            <a href="{{  route('admin.editapuesta', $apuesta->id)  }}" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
                             <form action="{{  route('admin.deleteapuesta', $apuesta->id)  }}" method="POST">
                                 @csrf
                                 @method('put')
 
                                 @method('delete')
-                                <button type="submit" class="btn btn-danger">ELIMINAR</button>
+                                <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
                             </form>
                         </td>
                     </tr>

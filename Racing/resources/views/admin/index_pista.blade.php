@@ -25,13 +25,13 @@
                         <td>{{ $pista->lugar }}</td>
                         <td>{{ $pista->ruta }}</td>
                         <td>
-                            <a href="{{  route('admin.editpista', $pista->id)  }}" class="btn btn-warning">EDITAR</a>
+                            <a href="{{  route('admin.editpista', $pista->id)  }}" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
                             <form action="{{  route('admin.deletepista', $pista->id)  }}" method="POST">
                                 @csrf
                                 @method('put')
 
                                 @method('delete')
-                                <button type="submit" class="btn btn-danger">ELIMINAR</button>
+                                <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
                             </form>
                         </td>
                     </tr>
