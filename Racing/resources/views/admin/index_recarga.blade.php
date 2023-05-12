@@ -14,7 +14,8 @@
               <th>ID</th>
               <th>saldo</th>
               <th>estado</th>
-              <th>Acción</th>
+              <th>Accion</th>
+
 
             </tr>
           </thead>
@@ -24,11 +25,12 @@
                         <td>{{ $recarga->id }}</td>
                         <td>{{ $recarga->saldo }}</td>
                         <td>{{ $recarga->estado }}</td>
+
                         <td>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                                Abrir modal
-                            </button>
-{{--
+
+                            <a href="#"  onclick="dataf()"  class="btn btn-dark" {{-- data-toggle="modal" data-target="#modalInformacionfactura"  --}} style="margin-right: 20px; text-decoration: none;">
+                                <i class="fa-solid fa-file-invoice"></i>
+                            </a>
                             <form action="{{ route('admin.verificarR',$recarga->id) }}" method="POST">
                              @csrf
                              @method('put')
@@ -37,7 +39,8 @@
 
                             @else
                             <button type="submit" class="btn btn-success"><i class="fa-solid fa-check"></i></button>
-                            @endif  --}}
+                            @endif
+                            </form>
                         </td>
                     </tr>
                 @endforeach
@@ -49,27 +52,40 @@
   </div>
 </div>
 {{-- vista modal factura --}}
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="modalInformacionfactura" tabindex="-1" role="dialog" aria-labelledby="modalInformacionfacturaLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Título del modal</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>Contenido del modal...</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary">Guardar cambios</button>
-            </div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalInformacionfacturaLabel">Factura</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
+        <div class="modal-body">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <p > esto es parte del modas<strong>SIIIIUU</strong></p>
+              </div>
+              <div class="col-md-6">
+                <p >gsfafsf<strong>asdads</strong></p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
 @endsection
 @section('script')
+
+<script>
+    function dataf(){
+        $("#modalInformacionfactura").modal("show");
+
+     }
+ </script>
 <script>
     $(document).ready(function() {
     $('#miTabla').DataTable({
