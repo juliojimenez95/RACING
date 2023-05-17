@@ -12,8 +12,8 @@
           <thead>
             <tr>
               <th>ID</th>
-              <th>nombre</th>
-             <th>saldo</th>
+              <th>Nombre</th>
+             <th>Saldo</th>
               <th>Acción</th>
 
             </tr>

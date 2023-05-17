@@ -12,8 +12,8 @@
           <thead>
             <tr>
               <th>ID</th>
-              <th>lugar</th>
-              <th>ruta</th>
+              <th>Lugar</th>
+              <th>Ruta</th>
               <th>Acción</th>
 
             </tr>

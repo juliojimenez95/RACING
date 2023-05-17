@@ -1,0 +1,21 @@
+/* Estilos para la barra de navegación */
+.navbar {
+    background-color: black;
+    color: white;
+}
+
+/* Estilos para la tarjeta */
+.card {
+    background-color: white;
+}
+
+/* Estilo para la tarjeta cuando se pasa el cursor sobre ella */
+.card:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos para el fondo de la página */
+body {
+    background-image: url('/images/race-ppal');
+    background-size: cover;
+}

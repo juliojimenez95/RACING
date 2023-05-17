@@ -64,15 +64,29 @@
         <div class="modal-body">
           <div class="card-body">
             <div class="row">
-              <div class="col-md-6">
-                <p > esto es parte del modas<strong>SIIIIUU</strong></p>
+              <div class="invoice">
+                <h1>Factura</h1>
+                <p><strong>Documento:</strong> {{ $recarga->id }}</p>
+                <p><strong>Saldo:</strong> {{ $recarga->saldo }}</p>
+                <p><strong>Estado:</strong> {{ $recarga->estado }}</p>
+                <div class="barcode">
+                  <div class="line"></div>
+                  <div class="line"></div>
+                  <div class="line"></div>
+                  <div class="line"></div>
+                  <div class="line"></div>
+                  <div class="line"></div>
+                  <div class="line"></div>
+                  <div class="line"></div>
+                </div>
+                <p><strong>Enviar a:</strong> Motorcycle Racing</p>
+                <p><strong>Numero de cuenta:</strong> 006-306-751-590-87</p>
+                <p><strong>||||| ||  |||| |||||   || | ||||  ||| |||| |||</strong></p>
+                <p><strong>||||| ||  |||| |||||   || | ||||  ||| |||| |||</strong></p>
+                <p><strong>||||| ||  |||| |||||   || | ||||  ||| |||| |||</strong></p>
+                <p><strong>||||| ||  |||| |||||   || | ||||  ||| |||| |||</strong></p>
               </div>
-              <div class="col-md-6">
-                <p >gsfafsf<strong>asdads</strong></p>
-              </div>
-            </div>
 
-          </div>
         </div>
       </div>
     </div>

@@ -11,7 +11,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header">{{ __('Editar pista') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('admin.updatepista',$pista->id) }}">
@@ -34,7 +34,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="codY" class="col-md-4 col-form-label text-md-end">{{ __('ruta') }}</label>
+                            <label for="codY" class="col-md-4 col-form-label text-md-end">{{ __('Ruta') }}</label>
 
                             <div class="col-md-6">
                                 <input id="ruta" type="ruta" class="form-control @error('ruta') is-invalid @enderror" name="ruta" value="{{ $pista->ruta }}" required autocomplete="ruta">
@@ -47,7 +47,7 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('longitud') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Longitud') }}</label>
 
                             <div class="col-md-6">
                                 <input id="codX" type="text" class="form-control @error('codX') is-invalid @enderror" name="codX" value="{{ old('codX') }}" required autocomplete="name" autofocus>
@@ -61,7 +61,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="codY" class="col-md-4 col-form-label text-md-end">{{ __('latitud') }}</label>
+                            <label for="codY" class="col-md-4 col-form-label text-md-end">{{ __('Latitud') }}</label>
 
                             <div class="col-md-6">
                                 <input id="codY" type="codY" class="form-control @error('codY') is-invalid @enderror" name="codY" value="{{ old('codY') }}" required autocomplete="codY">
@@ -77,7 +77,7 @@
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Registar') }}
+                                    {{ __('Editar') }}
                                 </button>
                             </div>
                         </div>

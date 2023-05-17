@@ -12,7 +12,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header">{{ __('Recargas') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('Registro.updaterecarga',Auth::user()->id) }}">
@@ -20,7 +20,7 @@
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="Valor_recarga" class="col-md-4 col-form-label text-md-end">{{ __('Cantidad de recarga') }}</label>
+                            <label for="Valor_recarga" class="col-md-4 col-form-label text-md-end">{{ __('Cantidad a recargar') }}</label>
 
                             <div class="col-md-6">
                                 <input id="Valor_recarga" type="number" class="form-control @error('Valor_recarga') is-invalid @enderror" name="Valor_recarga" value="{{ old('Valor_recarga') }}" required autocomplete="Valor_recarga">
@@ -36,7 +36,7 @@
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Registar') }}
+                                    {{ __('Recargar') }}
                                 </button>
                             </div>
                         </div>

@@ -12,7 +12,7 @@
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('piloto') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Piloto') }}</label>
 
                             <div class="col-md-6">
                                 <input id="piloto" type="number" class="form-control @error('piloto') is-invalid @enderror" name="piloto" value="{{ Auth::user()->id }}" required autocomplete="piloto" autofocus>
@@ -26,7 +26,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="codY" class="col-md-4 col-form-label text-md-end">{{ __('carrera') }}</label>
+                            <label for="codY" class="col-md-4 col-form-label text-md-end">{{ __('Carrera') }}</label>
 
                             <div class="col-md-6">
                                 <select class="form-select" aria-label="Default select example" name="carrera">
