@@ -25,7 +25,7 @@
                                 <select class="form-select" aria-label="Default select example" name="pista">
                                     <option value="">Porfavor seleccione una pista...</option>
                                     @foreach ($pistas as $pista)
-                                        <option value="{{ $pista->id }}">{{ $pista->lugar }}</option>
+                                        <option value="{{ $pista->id }}">{{ $pista->ruta }}</option>
                                     @endforeach
 
                                 </select>
