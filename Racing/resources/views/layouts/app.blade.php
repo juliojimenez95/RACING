@@ -12,7 +12,7 @@
     <!-- date table -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.3/css/dataTables.bootstrap5.min.css"/>
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.5/css/buttons.bootstrap5.min.css"/>
-
+    <link rel="stylesheet" href="{{ asset('css/stylesA.css') }}"/>
 
 
     <!-- Fonts -->
@@ -32,12 +32,12 @@
 
             @guest
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    <img src="{{ asset('images/Logo.jpeg') }}" alt="Logo" width="50" height="50">
                 </a>
 
             @else
                 <a class="navbar-brand" href="{{ url('/home') }}">
-                    {{ config('app.name', 'Laravel') }}
+                <img src="{{ asset('images/Logo.jpeg') }}" alt="Logo" width="100" height="100">
                 </a>
                 <a class="navbar-brand" href="{{ route('admin.indexcarrera') }}">
                     {{ __( 'Eventos') }}
@@ -47,7 +47,7 @@
                     {{ __( 'Pistas') }}
                 </a>
                 <a class="navbar-brand" href="{{ route('admin.indexEvento') }}">
-                    {{ __( 'Evento2') }}
+                    {{ __( 'Pilotos') }}
                 </a>
                 <a class="navbar-brand" href="{{ route('admin.indexMoto') }}">
                     {{ __( 'Moto') }}

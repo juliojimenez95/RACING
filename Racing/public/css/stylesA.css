@@ -15,7 +15,23 @@
 }
 
 /* Estilos para el fondo de la página */
-body {
-    background-image: url('/images/race-ppal');
+.py-4 {
+    background-image: url('../images/race-ppal.jpg');
     background-size: cover;
+    background-position: center;
+}
+.table{
+    background-color: white;
+}
+h1{
+    color: white;
+}
+label{
+    color: white;
+}
+.dataTables_info{
+    color: white;
+}
+.invoice h1{
+    color: black;
 }
