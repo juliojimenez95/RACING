@@ -13,6 +13,7 @@
             <tr>
 
                 <th>Piloto</th>
+                <th>ID piloto</th>
                 <th>ID de carrera</th>
                 <th>ID de moto</th>
                 <th>Posicion</th>
