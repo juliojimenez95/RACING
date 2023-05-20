@@ -1,6 +1,6 @@
 /* Estilos para la barra de navegación */
 .navbar {
-    background-color: black;
+    background-color: white;
     color: white;
 }
 
@@ -24,17 +24,20 @@
     background-color: white;
 }
 h1{
-    color: white;
+    color: #808080;
 }
 label{
-    color: white;
+    color: #808080;
 }
 .dataTables_info{
-    color: white;
+    color: #808080;
 }
 .invoice h1{
     color: black;
 }
 .card label{
+    color: black;
+}
+.container{
     color: black;
 }
